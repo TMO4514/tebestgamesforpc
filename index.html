@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THEBESTGAMESFORPC | Gaming</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080b14;
+      color: #f5f7ff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      border-bottom: 1px solid #202a3e;
+      background: #0c1120;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #00e5ff;
+    }
+
+    nav a {
+      color: #d8e2f5;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 90px 20px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #153b59, transparent 65%),
+        #080b14;
+    }
+
+    .tag {
+      color: #00e5ff;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 65px);
+      margin: 20px 0;
+    }
+
+    h1 span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      color: #a8b5cc;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      background: #00e5ff;
+      color: #07101a;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .games {
+      padding: 45px 8% 70px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      color: #93a2bc;
+      margin-bottom: 25px;
+    }
+
+    .search {
+      width: 100%;
+      max-width: 450px;
+      padding: 13px 15px;
+      margin-bottom: 30px;
+      background: #111a2b;
+      border: 1px solid #293852;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .search:focus {
+      outline: 1px solid #00e5ff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: #111827;
+      border: 1px solid #26334a;
+      border-radius: 10px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #00e5ff;
+      box-shadow: 0 8px 30px #00e5ff12;
+    }
+
+    .cover {
+      height: 160px;
+      display: grid;
+      place-items: center;
+      font-size: 48px;
+    }
+
+    .cyber { background: linear-gradient(135deg, #4b145b, #102b53, #00a6a6); }
+    .racing { background: linear-gradient(135deg, #b72b32, #431b36, #171d36); }
+    .survival { background: linear-gradient(135deg, #254b38, #172e2d, #101622); }
+    .fantasy { background: linear-gradient(135deg, #4a3480, #18274f, #101622); }
+    .shooter { background: linear-gradient(135deg, #9a5924, #3b2631, #101622); }
+    .adventure { background: linear-gradient(135deg, #24677a, #26305f, #101622); }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .genre {
+      color: #00e5ff;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: #a8b5cc;
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 42px;
+    }
+
+    .details {
+      display: inline-block;
+      margin-top: 17px;
+      color: #00e5ff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .details:hover {
+      text-decoration: underline;
+    }
+
+    #empty {
+      color: #a8b5cc;
+      margin-top: 20px;
+    }
+
+    footer {
+      padding: 25px 8%;
+      text-align: center;
+      border-top: 1px solid #202a3e;
+      color: #8391a9;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 12px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+
+      .games {
+        padding: 35px 5% 50px;
+      }
+    }.game-image {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: #111827;
+}
+
+.card[hidden] {
+  display: none;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">TEBESTGAMESFORPC</div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#jeux">Les jeux</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="tag">TON UNIVERS GAMING</div>
+      <h1>LEVEL UP YOUR <span>GAME.</span></h1>
+      <p>
+        Explore les jeux PC, découvre de nouveaux univers
+        et trouve ton prochain jeu préféré.
+        Bienvenue sur TE BEST GAMES FOR PC !
+      </p>
+      <a class="button" href="#jeux">DÉCOUVRIR LES JEUX ↗</a>
+    </section>
+
+    <section class="games" id="jeux">
+      <h2 class="section-title">Jeux à découvrir</h2>
+      <p class="subtitle">Une sélection pour les joueurs PC.</p>
+
+      <input
+        class="search"
+        id="search"
+        type="search"
+        placeholder="🔎 Rechercher un jeu..."
+        aria-label="Rechercher un jeu"
+      >
+
+      <div class="grid" id="gameGrid">
+
+        <article class="card" data-name="cyberpunk 2077 action monde ouvert">
+          <img
+  class="game-image"
+  src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg"
+  alt="Cyberpunk 2077"
+          <div class="card-content">
+            <h3>Cyberpunk 2077</h3>
+            <div class="genre">ACTION · MONDE OUVERT</div>
+            <p class="description">Explore une immense ville futuriste.</p>
+            <a class="details" href="https://www.cyberpunk.net/"
+               target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-name="forza horizon 5 course voiture automobile">
+          <div class="cover racing">🏎️</div>
+          <div class="card-content">
+            <h3>Forza Horizon 5</h3>
+            <div class="genre">COURSE · AUTOMOBILE</div>
+            <p class="description">Prends le volant et explore le Mexique.</p>
+            <a class="details" href="https://forza.net/"
+               target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-name="minecraft survie construction aventure">
+          <div class="cover survival">🌲</div>
+          <div class="card-content">
+            <h3>Minecraft</h3>
+            <div class="genre">SURVIE · CONSTRUCTION</div>
+            <p class="description">Construis ton monde et pars à l'aventure.</p>
+            <a class="details" href="https://www.minecraft.net/"
+               target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-name="elden ring fantasy action aventure">
+          <div class="cover fantasy">⚔️</div>
+          <div class="card-content">
+            <h3>Elden Ring</h3>
+            <div class="genre">ACTION · FANTASY</div>
+            <p class="description">Découvre un monde mystérieux et dangereux.</p>
+            <a class="details" href="https://www.eldenring.jp/"
+               target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-name="valorant shooter tactique fps">
+          <div class="cover shooter">🎯</div>
+          <div class="card-content">
+            <h3>VALORANT</h3>
+            <div class="genre">FPS · TACTIQUE</div>
+            <p class="description">Affronte d'autres joueurs en équipe.</p>
+            <a class="details" href="https://playvalorant.com/"
+               target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-name="sea of thieves aventure pirate multijoueur">
+          <div class="cover adventure">🏴‍☠️</div>
+          <div class="card-content">
+            <h3>Sea of Thieves</h3>
+            <div class="genre">AVENTURE · MULTIJOUEUR</div>
+            <p class="description">Pars en mer et vis des aventures de pirate.</p>
+            <a class="details" href="https://www.seaofthieves.com/"
+               target="_blank" rel="noopener noreferrer">Site officiel ↗</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p id="empty" hidden>Aucun jeu trouvé. Essaie un autre nom !</p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>© 2026 TE BEST GAMES FOR PC · Créé avec passion 🎮</p>
+  </footer>
+
+  <script>
+    const search = document.getElementById("search");
+    const cards = document.querySelectorAll(".card");
+    const empty = document.getElementById("empty");
+
+    search.addEventListener("input", function () {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach(function (card) {
+        const matches = card.dataset.name.includes(query);
+        card.hidden = !matches;
+
+        if (matches) {
+          visible++;
+        }
+      });
+
+      empty.hidden = visible !== 0;
+    });
+  </script>
+</body>
+</html>
