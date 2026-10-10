@@ -372,3 +372,65 @@
   </script>
 </body>
 </html>
+/* Nouveau design gaming */
+body {
+  background: #080b14;
+  color: #f5f7ff;
+  font-family: Arial, sans-serif;
+}
+
+/* Cartes des jeux */
+.card {
+  background: linear-gradient(145deg, #171d2d, #0e1220);
+  border: 1px solid #27334d;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 30px rgba(0, 140, 255, 0.2);
+  border-color: #168cff;
+}
+
+/* Images des jeux */
+.game-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Contenu des cartes */
+.card-content {
+  padding: 16px;
+}
+
+.card h3 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+/* Boutons et liens */
+.details {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #087cff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.details:hover {
+  background: #0056c7;
+}
+
+/* Style des genres */
+.genre {
+  color: #45a7ff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
