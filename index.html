@@ -264,12 +264,73 @@
   border-radius: 8px;
   text-decoration: none;
 }
-  
+  /* Bannière d'accueil */
+.hero {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+  background:
+    linear-gradient(90deg, #080b14 10%, rgba(8, 11, 20, 0.85) 55%, rgba(8, 11, 20, 0.3)),
+    url("https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/library_hero.jpg") center/cover;
+  border-bottom: 1px solid #27334d;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-tag {
+  color: #45a7ff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  color: white;
+  font-size: clamp(38px, 6vw, 70px);
+  line-height: 1.05;
+  margin: 18px 0;
+}
+
+.hero-description {
+  color: #c0c8da;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 14px 22px;
+  background: #087cff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.hero-button:hover {
+  background: #45a7ff;
+  transform: translateY(-3px);
+}
   </style>
 </head>
 
 <body>
   <header>
+    <section class="hero">
+  <div class="hero-content">
+    <p class="hero-tag">TON UNIVERS GAMING</p>
+    <h1>PLAY YOUR<br> NEXT GAME</h1>
+    <p class="hero-description">
+      Découvre les meilleurs jeux PC et trouve ton prochain jeu préféré.
+    </p>
+    <a href="#games" class="hero-button">DÉCOUVRIR LES JEUX ↗</a>
+  </div>
+</section>
     <div class="logo">TEBESTGAMESFORPC</div>
     <nav>
       <a href="#accueil">Accueil</a>
